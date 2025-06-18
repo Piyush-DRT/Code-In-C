@@ -1,0 +1,304 @@
+# ✅ C++ Functions Practice Set – Solutions
+
+Below are the answers and solutions for the 40 problems provided in the practice set.
+
+---
+
+## 🟢 Category 1 – Output-Based
+
+1. Output: `Hi Hi`
+
+2. Output: `10`
+
+3. Output: `6`
+
+4. Output: `10`
+
+5. Output: `10`
+
+6. Output: `6 6`
+
+7. Output: `16`
+
+8. Output: `20`
+
+9. Output: `15 15`
+
+10. Output: `9`
+
+---
+
+## 🟡 Category 2 – Basic Function Implementation
+
+11.
+```cpp
+int factorial(int n) {
+    int fact = 1;
+    for(int i = 1; i <= n; ++i) fact *= i;
+    return fact;
+}
+```
+
+12.
+```cpp
+bool isEven(int n) { return n % 2 == 0; }
+```
+
+13.
+```cpp
+int max3(int a, int b, int c) { return max(a, max(b, c)); }
+```
+
+14.
+```cpp
+int countDigits(int n) {
+    int count = 0;
+    while(n) { count++; n /= 10; }
+    return count;
+}
+```
+
+15.
+```cpp
+int sumN(int n) { return n * (n + 1) / 2; }
+```
+
+16.
+```cpp
+void table(int n) {
+    for(int i = 1; i <= 10; ++i) cout << n * i << " ";
+}
+```
+
+17.
+```cpp
+int sumSquares(int n) {
+    int sum = 0;
+    for(int i = 1; i <= n; ++i) sum += i * i;
+    return sum;
+}
+```
+
+18.
+```cpp
+int reverseDigits(int n) {
+    int rev = 0;
+    while(n) { rev = rev * 10 + n % 10; n /= 10; }
+    return rev;
+}
+```
+
+19.
+```cpp
+bool isPalindrome(int n) {
+    return n == reverseDigits(n);
+}
+```
+
+20.
+```cpp
+void swap(int &a, int &b) {
+    int temp = a; a = b; b = temp;
+}
+```
+
+---
+
+## 🟠 Category 3 – Functions with Arrays and Strings
+
+21.
+```cpp
+int maxInArray(int arr[], int n) {
+    int maxVal = arr[0];
+    for(int i = 1; i < n; ++i) if(arr[i] > maxVal) maxVal = arr[i];
+    return maxVal;
+}
+```
+
+22.
+```cpp
+void reverseArray(int arr[], int n) {
+    for(int i = 0; i < n/2; ++i) swap(arr[i], arr[n - i - 1]);
+}
+```
+
+23.
+```cpp
+int sumArray(int arr[], int n) {
+    int sum = 0;
+    for(int i = 0; i < n; ++i) sum += arr[i];
+    return sum;
+}
+```
+
+24.
+```cpp
+void freq(int arr[], int n) {
+    unordered_map<int, int> count;
+    for(int i = 0; i < n; ++i) count[arr[i]]++;
+    for(auto p : count) cout << p.first << ": " << p.second << endl;
+}
+```
+
+25.
+```cpp
+bool isPalindrome(string s) {
+    int l = 0, r = s.length() - 1;
+    while(l < r) if(s[l++] != s[r--]) return false;
+    return true;
+}
+```
+
+26.
+```cpp
+string toUpper(string s) {
+    for(char &c : s) c = toupper(c);
+    return s;
+}
+```
+
+27.
+```cpp
+void selectionSort(int arr[], int n) {
+    for(int i = 0; i < n-1; ++i) {
+        int minIdx = i;
+        for(int j = i+1; j < n; ++j)
+            if(arr[j] < arr[minIdx]) minIdx = j;
+        swap(arr[i], arr[minIdx]);
+    }
+}
+```
+
+28.
+```cpp
+bool areAnagrams(string s1, string s2) {
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    return s1 == s2;
+}
+```
+
+29.
+```cpp
+int secondLargest(int arr[], int n) {
+    int first = INT_MIN, second = INT_MIN;
+    for(int i = 0; i < n; ++i) {
+        if(arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if(arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+    return second;
+}
+```
+
+30.
+```cpp
+void greaterThanAvg(int arr[], int n) {
+    double avg = sumArray(arr, n) / (double)n;
+    for(int i = 0; i < n; ++i) if(arr[i] > avg) cout << arr[i] << " ";
+}
+```
+
+---
+
+## 🔴 Category 4 – DSA / Recursive / Advanced
+
+31.
+```cpp
+int power(int a, int b) {
+    if(b == 0) return 1;
+    return a * power(a, b - 1);
+}
+```
+
+32.
+```cpp
+int fib(int n) {
+    if(n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+```
+
+33.
+```cpp
+bool isSorted(int arr[], int n) {
+    if(n == 1) return true;
+    return arr[0] <= arr[1] && isSorted(arr + 1, n - 1);
+}
+```
+
+34.
+```cpp
+int countDigits(int n) {
+    if(n == 0) return 0;
+    return 1 + countDigits(n / 10);
+}
+```
+
+35.
+```cpp
+int binarySearch(int arr[], int l, int r, int key) {
+    if(l > r) return -1;
+    int mid = (l + r) / 2;
+    if(arr[mid] == key) return mid;
+    if(arr[mid] > key) return binarySearch(arr, l, mid - 1, key);
+    return binarySearch(arr, mid + 1, r, key);
+}
+```
+
+36.
+```cpp
+bool isPrime(int n) {
+    if(n < 2) return false;
+    for(int i = 2; i*i <= n; ++i) if(n % i == 0) return false;
+    return true;
+}
+void printPrimes(int n) {
+    for(int i = 2; i <= n; ++i) if(isPrime(i)) cout << i << " ";
+}
+```
+
+37.
+```cpp
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+```
+
+38.
+```cpp
+string reverseStr(string s) {
+    if(s.length() == 0) return "";
+    return reverseStr(s.substr(1)) + s[0];
+}
+```
+
+39.
+```cpp
+void hanoi(int n, char A, char B, char C) {
+    if(n == 1) {
+        cout << "Move disk 1 from " << A << " to " << C << endl;
+        return;
+    }
+    hanoi(n-1, A, C, B);
+    cout << "Move disk " << n << " from " << A << " to " << C << endl;
+    hanoi(n-1, B, A, C);
+}
+```
+
+40.
+```cpp
+void recursiveSelectionSort(int arr[], int n, int index = 0) {
+    if(index == n) return;
+    int minIdx = index;
+    for(int j = index + 1; j < n; ++j) if(arr[j] < arr[minIdx]) minIdx = j;
+    swap(arr[index], arr[minIdx]);
+    recursiveSelectionSort(arr, n, index + 1);
+}
+```
+
+---
+

@@ -1,0 +1,148 @@
+# 🚀 C++ Functions Practice Set
+
+This set contains 40 questions categorized into increasing difficulty levels. Designed for interviews, GATE-level exams, and strong conceptual clarity.
+
+---
+
+## 🟢 Category 1 – Output-Based (Function Call Tracing)
+
+1. What is the output?
+```cpp
+void hello() { cout << "Hi "; }
+int main() { hello(); hello(); return 0; }
+```
+
+2. Predict output:
+```cpp
+int add(int a, int b) { return a + b; }
+int main() { cout << add(2, 3) * add(1, 1); return 0; }
+```
+
+3. Output?
+```cpp
+int fun(int x) {
+    if (x == 0) return 0;
+    return x + fun(x - 1);
+}
+int main() { cout << fun(3); return 0; }
+```
+
+4. Output?
+```cpp
+int calc(int x) { return x * 2; }
+int main() {
+    int x = 5;
+    cout << calc(x);
+    return 0;
+}
+```
+
+5. Output?
+```cpp
+void display(int x = 10) { cout << x; }
+int main() { display(); return 0; }
+```
+
+6. Output?
+```cpp
+void fun(int a) { cout << a << " "; }
+int main() { int a = 5; fun(++a); fun(a++); return 0; }
+```
+
+7. Output?
+```cpp
+int square(int x) { return x * x; }
+int main() { cout << square(3 + 1); return 0; }
+```
+
+8. Output?
+```cpp
+int mystery(int a, int b = 10) { return a * b; }
+int main() { cout << mystery(2); return 0; }
+```
+
+9. Output?
+```cpp
+int val(int &x) { x += 10; return x; }
+int main() { int x = 5; cout << val(x) << " " << x; return 0; }
+```
+
+10. Output?
+```cpp
+int fun(int x) { return x > 0 ? x + fun(x - 2) : 0; }
+int main() { cout << fun(5); return 0; }
+```
+
+---
+
+## 🟡 Category 2 – Basic Function Implementation
+
+11. Write a function to find the factorial of a number.
+
+12. Create a function to check whether a number is even or odd.
+
+13. Implement a function to return the maximum of three numbers.
+
+14. Write a function to count the digits in a number.
+
+15. Function to calculate the sum of first N natural numbers.
+
+16. Function to print multiplication table of a given number.
+
+17. Implement a function to return sum of squares up to N.
+
+18. Function to reverse digits of an integer.
+
+19. Function to check if a number is a palindrome.
+
+20. Function to swap two numbers using pass-by-reference.
+
+---
+
+## 🟠 Category 3 – Functions with Arrays and Strings
+
+21. Write a function to find maximum in an array.
+
+22. Write a function to reverse an array in-place.
+
+23. Function to calculate sum of elements in array.
+
+24. Function to count frequency of each element in an array.
+
+25. Function to check if a string is palindrome.
+
+26. Function to convert string to uppercase.
+
+27. Function to sort an array using selection sort.
+
+28. Write a function to check if two strings are anagrams.
+
+29. Function to find second largest element in array.
+
+30. Function to print elements greater than average.
+
+---
+
+## 🔴 Category 4 – DSA / Recursion / Advanced Use
+
+31. Write a recursive function to compute power(a, b).
+
+32. Write a recursive function for Fibonacci series.
+
+33. Function to check if array is sorted (recursive).
+
+34. Recursive function to count digits in a number.
+
+35. Implement binary search using recursion.
+
+36. Write a function to print all prime numbers up to N.
+
+37. Function to calculate GCD using Euclidean algorithm.
+
+38. Recursive function to reverse a string.
+
+39. Function to solve Tower of Hanoi for N disks.
+
+40. Write a function to implement selection sort recursively.
+
+---

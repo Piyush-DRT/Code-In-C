@@ -146,3 +146,5 @@ int main() { cout << fun(5); return 0; }
 40. Write a function to implement selection sort recursively.
 
 ---
+
+✨ *Happy coding! Review logic, trace recursively, and always test corner cases.*

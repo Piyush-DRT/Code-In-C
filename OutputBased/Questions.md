@@ -359,4 +359,3 @@ cout << x << " " << a;
 ```
 ```
 
-Let me now generate the solutions in the next file (`README_SOLUTIONS.md`). Shall I continue?
